@@ -1,0 +1,15 @@
+# the optional clause returns all datasets instead of just those with entries for next update
+# Liam Cavin OCSSA Dec 2016
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?Dataset ?nextupdate  
+
+WHERE {  ?s rdf:type <http://publishmydata.com/def/dataset#Dataset>; 
+            rdfs:label ?Dataset.
+       OPTIONAL { ?s <http://publishmydata.com/def/dataset#nextUpdateDue> ?nextupdate.}
+             }
+
+ORDER BY ?Dataset
+ 

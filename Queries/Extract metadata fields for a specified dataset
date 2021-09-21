@@ -1,0 +1,21 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?Name ?Creator ?Publisher ?AccuracyAndReliability ?Comment ?DateIssued ?DateModified ?Description
+WHERE {
+  
+  ?obs rdfs:label "Local Authority Services and Performance - SHS".
+  ?obs rdfs:label ?Name.
+  
+  ?obs dcterms:creator ?cre.
+  ?cre rdfs:label ?Creator.
+  
+  ?obs dcterms:publisher ?pub.
+  ?pub rdfs:label ?Publisher.  
+  
+  ?obs <http://statistics.gov.scot/def/statistical-quality/accuracy-and-reliability> ?AccuracyAndReliability.
+  ?obs rdfs:comment ?Comment.
+  ?obs dcterms:issued ?DateIssued.
+  ?obs dcterms:modified ?DateModified.
+  ?obs dcterms:description ?Description.
+}

@@ -1,0 +1,7 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT *
+WHERE {
+?s <http://purl.org/linked-data/cube#dimension> ?x.
+FILTER( !EXISTS { ?x rdfs:label ?y.} )
+}

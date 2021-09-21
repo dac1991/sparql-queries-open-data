@@ -1,0 +1,17 @@
+SELECT *
+WHERE {
+  ?obs <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/linked-data/cube#DataSet>.
+  ?obs <http://www.w3.org/2000/01/rdf-schema#label> ?Name.
+  
+OPTIONAL{?obs <http://www.w3.org/2000/01/rdf-schema#comment> ?Comment.}
+OPTIONAL{?obs <http://purl.org/dc/terms/description> ?Description.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/accessibility-and-clarity> ?Accessibility_and_Clarity.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/accuracy-and-reliability> ?Accuracy_and_Reliability.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/comparability-and-coherence> ?Comparability_and_Coherence.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/confidentiality> ?Confidentiality.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/quality-management> ?Quality_Management.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/relevance> ?Relevance.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/revisions> ?Revisions.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/timeliness-and-punctuality> ?Timeliness_and_Punctuality.}
+  
+  }

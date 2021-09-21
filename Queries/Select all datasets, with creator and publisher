@@ -1,0 +1,17 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+
+SELECT ?name ?creator ?publisher
+WHERE {
+  ?obs rdf:type qb:DataSet.
+  ?obs rdfs:label ?name. 
+  ?obs dcterms:creator ?cre.
+  ?cre rdfs:label ?creator.
+  ?obs dcterms:publisher ?pub.
+  ?pub rdfs:label ?publisher.      
+}
+
+ ORDER BY ?name

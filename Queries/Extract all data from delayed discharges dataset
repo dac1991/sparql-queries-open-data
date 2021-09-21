@@ -1,0 +1,23 @@
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX dim: <http://statistics.gov.scot/def/dimension/>
+PREFIX sdmx: <http://purl.org/linked-data/sdmx/2009/dimension#>
+
+ SELECT ?month ?delaylength ?reasonfordelay ?geographyname ?geographycode ?count 
+
+ WHERE { 
+ ?s qb:dataSet <http://statistics.gov.scot/data/delayed-discharges-monthly-census>; 
+ sdmx:refPeriod ?monthURI; 
+ dim:delay ?delayURI; 
+ dim:reasonForDelay ?reasonURI;
+ <http://statistics.gov.scot/def/measure-properties/count> ?count; 
+ sdmx:refArea ?geographyURI.
+ ?geographyURI <http://www.w3.org/2004/02/skos/core#notation> ?geographycode. 
+   
+ ?monthURI rdfs:label ?month. 
+ ?delayURI rdfs:label ?delaylength. 
+ ?reasonURI rdfs:label ?reasonfordelay. 
+ ?geographyURI rdfs:label ?geographyname.
+} 
+
+ORDER BY ?month
