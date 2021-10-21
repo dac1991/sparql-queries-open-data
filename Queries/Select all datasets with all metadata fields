@@ -1,0 +1,38 @@
+   WHERE {
+ 
+  ?obs <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://publishmydata.com/def/dataset#Dataset>. 
+ 
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/accessibility-and-clarity> ?Accessibility_and_Clarity.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/accuracy-and-reliability> ?Accuracy_and_Reliability.}
+OPTIONAL{?obs <http://www.w3.org/2000/01/rdf-schema#comment> ?Comment.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/comparability-and-coherence> ?Comparability_and_Coherence.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/confidentiality> ?Confidentiality.}
+OPTIONAL{?obs <http://publishmydata.com/def/dataset#contactEmail> ?Contact_Email.}
+OPTIONAL{?obs <http://purl.org/dc/terms/creator> ?Creator.}
+#OPTIONAL{?obs <http://purl.org/dc/terms/issued> ?Date_issued.}
+OPTIONAL{?obs <http://purl.org/dc/terms/modified> ?Date_modified.}
+OPTIONAL{?obs <http://purl.org/dc/terms/description> ?Description.}
+OPTIONAL{?obs <http://publishmydata.com/def/dataset#graph> ?Graph.}
+OPTIONAL{?obs <http://rdfs.org/ns/void#sparqlEndpoint> ?SPARQL_endpoint.}
+OPTIONAL{?obs <http://publishmydata.com/def/dataset#nextUpdateDue> ?next_Update_Due.}
+OPTIONAL{?obs <http://www.w3.org/2000/01/rdf-schema#label> ?Label.}
+OPTIONAL{?obs <http://purl.org/dc/terms/license> ?License.}
+ 
+OPTIONAL {?obs <http://www.w3.org/ns/dcat#theme> ?Organisation .
+?Organisation <http://publishmydata.com/def/ontology/folder/inTree> <http://statistics.gov.scot/def/concept/folders/organisations> }
+ 
+OPTIONAL{?obs <http://purl.org/dc/terms/publisher> ?Publisher.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/quality-management> ?Quality_Management.}
+OPTIONAL{?obs <http://purl.org/dc/terms/references> ?Reference.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/relevance> ?Relevance.}
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/revisions> ?Revisions.}
+ 
+OPTIONAL{?obs <http://www.w3.org/ns/dcat#theme> ?Theme.
+?Theme <http://publishmydata.com/def/ontology/folder/inTree> <http://statistics.gov.scot/def/concept/folders/themes> }
+ 
+OPTIONAL{?obs <http://statistics.gov.scot/def/statistical-quality/timeliness-and-punctuality> ?Timeliness_and_Punctuality.}
+OPTIONAL{?obs <http://purl.org/dc/terms/title> ?Title.}
+#OPTIONAL{?obs <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?Type.}
+OPTIONAL{?obs <http://purl.org/dc/terms/issued> ?issued  }
+}  group by ?obs ?Accessibility_and_Clarity ?Accuracy_and_Reliability ?Comment ?Comparability_and_Coherence ?Confidentiality ?Contact_Email ?Creator ?Date_modified ?Description ?Graph ?SPARQL_endpoint ?next_Update_Due ?Label ?License ?Organisation ?Publisher ?Quality_Management ?Reference ?Relevance ?Revisions ?Theme ?Timeliness_and_Punctuality ?Title ORDER BY ?obs
+
