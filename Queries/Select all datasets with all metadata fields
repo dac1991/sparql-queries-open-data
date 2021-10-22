@@ -1,4 +1,6 @@
-   WHERE {
+  SELECT ?obs ?Accessibility_and_Clarity ?Accuracy_and_Reliability ?Comment ?Comparability_and_Coherence ?Confidentiality ?Contact_Email ?Creator ?Date_modified ?Description ?Graph ?SPARQL_endpoint ?next_Update_Due ?Label ?License ?Organisation ?Publisher ?Quality_Management ?Reference ?Relevance ?Revisions ?Theme ?Timeliness_and_Punctuality ?Title (min(?issued) as ?Date_issued) 
+  
+  WHERE {
  
   ?obs <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://publishmydata.com/def/dataset#Dataset>. 
  
